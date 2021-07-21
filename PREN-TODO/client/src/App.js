@@ -1,12 +1,22 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
+// <fragment> = <>
+// components
+
+import InputTodo from "./components/InputTodo";
+
 function App() {
   return (
-    <div className="d-flex justify-content-center">
-      <h1>hello world</h1>
+    <>
+      <div className="container">
+        <InputTodo />
+      </div>
+      {/* <h1></h1>
       <input />
       <button className="btn btn-primary">save</button>
-    </div>
+      <>
+      </> */}
+    </>
   );
 }
 
