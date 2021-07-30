@@ -50,22 +50,23 @@ const ListTodos = () => {
         </thead>
         <tbody>
           {/*代入表格內容Build The List Todo Component*/}
-          {todos.map((todo) => (
-            <tr key={todo.todo_id}>
-              <td>{todo.description}</td>
-              <td>
-                <EditTodo />
-              </td>
-              <td>
-                <button
-                  className="btn btn-danger"
-                  onClick={() => deleteTodo(todo.todo_id)}
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ))}
+          {todos &&
+            todos.map((todo) => (
+              <tr key={todo.todo_id}>
+                <td>{todo.description}</td>
+                <td>
+                  <EditTodo todo={todo} />
+                </td>
+                <td>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => deleteTodo(todo.todo_id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </>
