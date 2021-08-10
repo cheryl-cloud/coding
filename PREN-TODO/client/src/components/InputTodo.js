@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react"; //React自動import(套件名ES7 React/Redux/GraphQL/React-Native snippets)
 
 const InputTodo = () => {
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState({});
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
