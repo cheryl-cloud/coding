@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03_01矩形人員介紹卡片</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: "Noto Serif TC", serif;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        background-color: #003;
+      }
+      .wrap {
+        width: 1200px;
+        display: flex;
+        margin: auto;
+      }
+      .item {
+        width: 370px;
+        margin: 15px;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid #ccc;
+      }
+      .item img {
+        width: 100%;
+      }
+      .item h2 {
+        border-bottom: 1px solid #888;
+        padding-bottom: 0.3em;
+        margin-bottom: 0.4em;
+        font-weight: 700;
+      }
+      .item p {
+        line-height: 1.6;
+        font-weight: 300;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">
+        <img src="https://picsum.photos/300/300?random=5" />
+        <div class="txt">
+          <h2>前端工程師</h2>
+          <p>
+            負責專案前端畫面製作，根據網頁架構的設計稿，利用 HTML, CSS,
+            JavaScript 架構出網站。
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://picsum.photos/300/300?random=10" />
+        <div class="txt">
+          <h2>後端工程師</h2>
+          <p>負責專案後端程式資料邏輯處理及架設資料庫和串接。</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://picsum.photos/300/300?random=15" />
+        <div class="txt">
+          <h2>UI/UX設計師</h2>
+          <p>
+            負責專案畫面設計，UI主要負責的項目是整體視覺呈現，UX的則是從使用者的角度去看怎麼樣對使用者來說最直覺。
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
