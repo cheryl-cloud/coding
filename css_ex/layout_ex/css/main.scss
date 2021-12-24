@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat&display=swap");
+
+body {
+  margin: 0;
+}
+
+h1,
+.logo {
+  font-family: "Amiri", serif;
+  font-weight: normal;
+}
+//頁首的logo設計
+.logo {
+  font-weight: bold;
+  text-decoration: none; //取消底線
+  color: black;
+  font-size: 1.2em;
+}
+
+p,
+a {
+  font-family: "Montserrat";
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-bg,
+.social,
+.pagination {
+  position: absolute;
+}
+// 社群媒體ICON
+.social {
+  display: none;
+}
+// 頁首
+header {
+  background-color: #fff;
+  display: flex;
+  //將header內的logo和menu中間的空間隔開
+  justify-content: space-between;
+  padding: 1em;
+  // 導覽列連結不秀出
+  ul {
+    display: none;
+  }
+}
+// 右邊背景圖片
+.main-bg {
+  background: url("../images/main-bg.jpg");
+  background-position: 40% 0;
+  width: 40%;
+  height: 900px;
+  z-index: -1; //z-index屬性元素設定層之間進行重疊的時候，數字愈大愈上層，如果設定auto則是第一個元素在最上層，-1則是將圖片移置下方一層。
+  right: 0;
+}
+// 首圖上的文字區塊位置
+.main-content {
+  padding: 9em 4em 9em 3em; //設定值為順時針方向上，右，下，左
+}
+// 首圖上的文字參數設定
+h1 {
+  font-size: 2.5em;
+  line-height: 1em;
+}
+.main-content p {
+  font-size: 0.9em;
+  line-height: 1.5em;
+  //p文字左邊內縮20%
+  padding-left: 20%;
+  //p前方加上一個長方形色塊
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 2.5em;
+    width: 20%;
+    background: #f1ede2;
+    //色塊位置離上邊修改與p文字對齊
+    margin-top: 0.3em;
+  }
+}
+// 頁尾
+footer {
+  width: 85%;
+  background: #23383b;
+  display: flex;
+  position: relative;
+}
+//頁尾上方的圖片
+.makeup {
+  width: 8em;
+  height: 8em;
+  background: url("../images/makeup.jpg");
+  //cover圖片填滿背景;contain根據圖片尺寸填滿可能出現同張圖片並排填滿，除非加上background-repeat: no-repeat;
+  background-size: cover;
+}
+//頁尾上方的連結
+.cta {
+  color: white;
+  text-decoration: none;
+  align-self: center;
+  position: relative;
+  margin: 3em auto;
+  //空白元素處理nowrap和 normal 一樣，連續的空白符會被合併。但文本內的換行無效。
+  white-space: nowrap;
+  //連結旁的白色框線
+  &:before {
+    content: "";
+    position: absolute;
+    width: 83%;
+    height: 3em;
+    left: -1em;
+    top: -1em;
+    border: 1px solid #fff;
+  }
+}
+//分頁區塊位置
+ul.pagination {
+  z-index: 1;
+  background-color: #fff;
+  right: 0;
+  top: 30%;
+  //分頁設計
+  li {
+    padding: 1em 1.5em 1.5em 1em;
+    position: relative;
+    //分頁圓點設計
+    &:before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border: 1px solid rgb(145, 145, 145);
+      border-radius: 50%;
+    }
+  }
+  //li第一個圓點背景黑色
+  .active:before {
+    background: black;
+  }
+}
+//Footer上的小方塊
+.block {
+  position: absolute;
+  background: #335257;
+  width: 2em;
+  height: 2em;
+}
+.one {
+  right: 2em;
+}
+.two {
+  right: 0;
+  top: 2em;
+}
+
+//RWD media寬度550px以上時
+@media (min-width: 550px) {
+  body {
+    font-size: 18px;
+  }
+  //menu多選單ICON不顯示
+  .menu {
+    display: none;
+  }
+  //導覽列排列方式
+  nav ul {
+    display: flex;
+    //導覽列內文字設定
+    li a {
+      color: black;
+      text-decoration: none;
+      display: block;
+      padding: 0.3em 0.8em;
+      font-size: 0.9em;
+    }
+  }
+  .social {
+    //全域設定unset初始化
+    display: unset;
+    z-index: 1;
+    left: 1.5em;
+    top: 30%;
+    text-align: center;
+
+    li {
+      margin-bottom: 2em;
+
+      img {
+        width: 20px;
+      }
+      //因為臉書ICON原圖較大所以最後要再修改尺寸
+      &:last-child img {
+        width: 10px;
+      }
+    }
+  }
+  .main-content {
+    padding: 9em 4em 7em 6em;
+  }
+  .main-content p:before {
+    width: 25%;
+  }
+}
+//RWD media寬度900px以上時
+@media (min-width: 900px) {
+  body {
+    font-size: 20px;
+  }
+  footer {
+    width: 75%;
+  }
+  .makeup {
+    width: 12em;
+    height: 12em;
+  }
+  .main-content {
+    padding: 7em 4em 7em 8em;
+    p {
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 22px;
+  }
+  .main-content {
+    padding: 7em 4em 7em 10em;
+    p {
+      width: 30%;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .main-bg {
+    right: 10%;
+  }
+}
