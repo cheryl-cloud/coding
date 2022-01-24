@@ -20,9 +20,9 @@ body {
 
 .score {
   position: absolute;
-  font-size: 3vmin;
-  right: 1vmin;
-  top: 1vmin;
+  font-size: 8vmin;
+  right: 2vmin;
+  top: 2vmin;
 }
 
 .start-screen {
